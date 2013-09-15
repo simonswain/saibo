@@ -1,0 +1,16 @@
+body {
+    padding: 16px;
+    font-family: arial;
+    font-size: 16px;
+}
+
+#time {
+    float: right;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: right;
+}
