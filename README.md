@@ -39,8 +39,7 @@ cells.set('width', 20);
 // Area 200
 ```
 
-``javascript
-
+```javascript
 cells.on('time', function(x){
   console.log(x);
 });
