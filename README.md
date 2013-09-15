@@ -24,7 +24,6 @@ cells.set('height', 10);
 console.log(cells.val('width')); // 10
 
 // calculate area from width * height
-
 cells.add('area')
   .formula(function(width, height){
     return width * height;
