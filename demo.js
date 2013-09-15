@@ -3,13 +3,13 @@ document.onreadystatechange = function() {
 
     var cells = new Saibo();
 
-    document.getElementById('width').onchange = function(e){
-      cells.set('width', Number(e.target.value));
-    };
+    cells.on('width', function(x){
+      document.getElementById('width').value = x;
+    });
 
-    document.getElementById('height').onchange = function(e){
-      cells.set('height', Number(e.target.value));
-    };
+    cells.on('height', function(x){
+      document.getElementById('height').value = x;
+    });
 
     cells.on('area', function(x){
       document.getElementById('area').innerHTML = x;
@@ -19,32 +19,29 @@ document.onreadystatechange = function() {
       document.getElementById('time').innerHTML = x;
     });
 
+
+    document.getElementById('width').onchange = function(e){
+      cells.set('width', Number(e.target.value));
+    };
+
+    document.getElementById('height').onchange = function(e){
+      cells.set('height', Number(e.target.value));
+    };
+
     cells.set('time', 0)
       .timer(1000, function(){
         return Number(this.val()) + 1;
       });
 
-    cells.set('width', 200);
-    cells.set('height', 100);
-
-    cells.all();
-
     cells.add('area')
       .formula(function(width, height){
-        return width * height;
+        return Number(width) * Number(height);
       }, ['width','height']);
 
-    cells.on('area', function(x){
-      console.log('Area', x);
-    });
+    cells.set('width', 10);
+    cells.set('height', 20);
 
-    console.log('Area', cells.val('area'));
-
-    cells.set('height', 250);
-    cells.set('height', 370);
-    //cells.set('width', 501);
-
-
+    cells.all();
 
   }
 };
