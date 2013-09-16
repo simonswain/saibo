@@ -40,6 +40,12 @@
       }
     };
     
+    this.each = function(fn){
+      for(var i in this.cells){
+        fn.call(this, this.cells[i].val(), i);
+      }
+    };
+
     // set cell or map of key value pairs, creating if not exists
     this.set = function(key, value){
       if(typeof key === 'object'){
