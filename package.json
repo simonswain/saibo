@@ -1,0 +1,27 @@
+{
+  "name"          : "saibo",
+  "description"   : "Simple reactive programming.",
+  "author"        : "Simon Swain <simon@simonswain.com>",
+  "homepage"      : "http://github.com/simonswain/saibo",
+  "main"          : "saibo.js",
+  "version"       : "0.0.1",
+  "files"         : ["saibo.js"],
+  "keywords"      : [
+    "reactive", 
+    "flow", 
+    "functional"
+  ],
+  "repository"    : {
+    "type": "git", 
+    "url": "git://github.com/simonswain/saibo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simonswain/saibo/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/simonswain/saibo/blob/master/LICENSE"
+    }
+  ]
+}
