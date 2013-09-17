@@ -3,6 +3,8 @@ document.onreadystatechange = function() {
 
     var cells = new Saibo();
 
+    // formula
+
     cells.on('width', function(x){
       document.getElementById('width').value = x;
     });
@@ -15,10 +17,25 @@ document.onreadystatechange = function() {
       document.getElementById('area').innerHTML = x;
     });
 
+    cells.add('area')
+      .formula(function(width, height){
+        return Number(width) * Number(height);
+      }, ['width','height']);
+
+    cells.set('width', 10);
+    cells.set('height', 20);
+
+    // timer
+
+    var cro = new Cro('cro');
+
     cells.on('time', function(x){
-      document.getElementById('time').innerHTML = x;
+      document.getElementById('time').innerHTML = Math.floor(x);
     });
 
+    cells.on('time', function(x){
+      cro.set(Math.cos(x % 360));
+    });
 
     document.getElementById('width').onchange = function(e){
       cells.set('width', Number(e.target.value));
@@ -29,19 +46,9 @@ document.onreadystatechange = function() {
     };
 
     cells.set('time', 0)
-      .timer(1000, function(){
-        return Number(this.val()) + 1;
+      .timer(250, function(){
+        return Number(this.val()) + 0.25;
       });
-
-    cells.add('area')
-      .formula(function(width, height){
-        return Number(width) * Number(height);
-      }, ['width','height']);
-
-    cells.set('width', 10);
-    cells.set('height', 20);
-
-    cells.all();
 
   }
 };
