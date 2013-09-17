@@ -19,41 +19,43 @@ interval.
 
 # Usage
 
-Create a new network of cells
+Create a new network of cells:
 
 ```javascript
 var cells = new Saibo();
 ```
 
-Add a cell
+Add a cell:
 
 ```javascript
 cells.add('foo');
 ```
 
-Set a cell's value
+Set a cell's value:
 
 ```javascript
 cells.set('foo', 23);
 ```
 
-Get a cell's value
+Get a cell's value:
 
 ```javascript
 var q = cells.val('foo'); // q = 23
 ```
 
-Find a cell and set it's value
+Find a cell and set it's value:
 
 ```javascript
 cells.find('foo').set(23);
 ```
 
+Or get it's value:
+
 ```javascript
 var q = cells.find('foo').val(); // q = 23
 ```
 
-Iterate all cells with a callback
+Iterate all cells with a callback:
 
 ```javascript
 cells.each(function(value, key){
@@ -61,13 +63,13 @@ cells.each(function(value, key){
 };
 ```
 
-Setting a non-existant cell will create it
+Setting a non-existant cell will create it.
 
 ```javascript
 cells.set('bar', 23);
 ```
 
-Attach a listener to trigger when a cells value changes
+Attach a listener to trigger when a cells value changes:
 
 ```javascript
 cells.on('foo', function(x){
@@ -79,7 +81,7 @@ cells.set('foo', 46);
 // foo = 46
 ```
 
-Create a new cell whose value is derived from other cells. 
+Create a new cell whose value is derived from other cells:
 
 The keys of the cells named in the array are passed to the callback
 function in the order given. Your callback must return the new value
@@ -93,7 +95,7 @@ cells.add('area')
   }, ['foo','bar']);
 ```
 
-Cells don't have to be numeric
+Cells don't have to be numeric.
 
 ```javascript
 cells.set('device', 'Roland');
