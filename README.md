@@ -99,7 +99,6 @@ Cells don't have to be numeric.
 
 ```javascript
 cells.set('device', 'Roland');
-});
 ```
 
 Adding a timer will cause a cell to run your callback every `n`
