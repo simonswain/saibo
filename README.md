@@ -17,13 +17,29 @@ and triggering event handler when cells they depend on change.
 Cells can have a timer function to set their value at a regular
 interval.
 
-# Usage
+# Installing
 
-Create a new network of cells:
+Use it in the browser like any other bit of code.
+
+To create a new network of cells:
 
 ```javascript
 var cells = new Saibo();
 ```
+
+Use in node via npm
+
+```bash
+$ npm install saibo
+```
+
+To create a new network of cells:
+
+```javascript
+var cells = require('saibo');
+```
+
+# Usage
 
 Add a cell:
 
