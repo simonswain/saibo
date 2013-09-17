@@ -1,5 +1,7 @@
 # Saibo
 
+See the [Saibo Project Page](http://simonswain.github.io/saibo/ "Saibo Project Page") for more examples.
+
 A simple library for reactive programming in the browser or Node.js
 
 Saibo lets you make a network of cells (like a key-value store). 
