@@ -15,29 +15,79 @@ and triggering event handler when cells they depend on change.
 Cells can have a timer function to set their value at a regular
 interval.
 
+# Usage
+
+Create a new network of cells
+
 ```javascript
 var cells = new Saibo();
+```
 
-cells.set('width', 10);
-cells.set('height', 10);
+Add a cell
 
-console.log(cells.val('width')); // 10
+```javascript
+cells.add('foo');
+```
 
-// calculate area from width * height
+Set a cells value
+
+```javascript
+cells.set('foo', 23);
+```
+
+Find a cell and set it's value
+
+```javascript
+cells.find('foo').set(23);
+```
+
+Iterate all cells with a callback
+
+```javascript
+cells.each(function(value, key){
+  console.log(key + ' = ' + value);
+};
+```
+
+Setting a non-existant cell will create it
+
+```javascript
+cells.set('bar', 23);
+```
+
+Attach a listener to trigger when a cells value changes
+
+```javascript
+cells.on('foo', function(x){
+  console.log('Area', x);
+});
+```
+
+Create a new cell whose value is derived from other cells. 
+
+The keys of the cells named in the array are passed to the callback
+function in the order given. Your callback must return the new value
+of the cell. The function will be called whenever it's required to
+provide the cell's value.
+
+```javascript
 cells.add('area')
   .formula(function(width, height){
     return width * height;
-  }, ['width','height']);
-
-// when area changes, call function
-cells.on('area', function(x){
-  console.log('Area', x);
-});
-
-cells.set('width', 20);
-
-// Area 200
+  }, ['foo','bar']);
 ```
+
+Cells don't have to be numeric
+
+```javascript
+cells.set('device', 'Roland');
+});
+```
+
+Adding a timer will cause a cell to run your callback every n
+milliseconds, emitting the value you return from the callback.
+
+Within the callback, `this` is your cell.
 
 ```javascript
 cells.on('time', function(x){
