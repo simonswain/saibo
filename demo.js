@@ -34,7 +34,7 @@ document.onreadystatechange = function() {
     });
 
     cells.on('time', function(x){
-      cro.set(Math.cos(x % 360));
+      cro.set(Math.cos(x));
     });
 
     document.getElementById('width').onchange = function(e){
