@@ -31,16 +31,26 @@ Add a cell
 cells.add('foo');
 ```
 
-Set a cells value
+Set a cell's value
 
 ```javascript
 cells.set('foo', 23);
+```
+
+Get a cell's value
+
+```javascript
+var q = cells.val('foo'); // q = 23
 ```
 
 Find a cell and set it's value
 
 ```javascript
 cells.find('foo').set(23);
+```
+
+```javascript
+var q = cells.find('foo').val(); // q = 23
 ```
 
 Iterate all cells with a callback
@@ -61,16 +71,20 @@ Attach a listener to trigger when a cells value changes
 
 ```javascript
 cells.on('foo', function(x){
-  console.log('Area', x);
+  console.log('foo = ' + x);
 });
+
+cells.set('foo', 46);
+
+// foo = 46
 ```
 
 Create a new cell whose value is derived from other cells. 
 
 The keys of the cells named in the array are passed to the callback
 function in the order given. Your callback must return the new value
-of the cell. The function will be called whenever it's required to
-provide the cell's value.
+of the cell. The function will be called whenever required to provide
+the cell's value.
 
 ```javascript
 cells.add('area')
@@ -86,10 +100,13 @@ cells.set('device', 'Roland');
 });
 ```
 
-Adding a timer will cause a cell to run your callback every n
+Adding a timer will cause a cell to run your callback every `n`
 milliseconds, emitting the value you return from the callback.
 
-Within the callback, `this` is your cell.
+Within the callback, `this` is your cell. You can do things like
+`this.val()` to get it's value.
+
+Whatever your callback returns will become the new value of the cell.
 
 ```javascript
 cells.on('time', function(x){
