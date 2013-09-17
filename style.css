@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 16px;
+    font-family: arial;
+    font-size: 16px;
+    background: #ddd;
+}
+
+.item {
+    margin: 8px;
+    padding: 8px;
+    background: #eee;
+    overflow: auto;
+}
+
+.demo h3 {
+    margin: 0 0 16px 0;
+}
+
+.demo {
+    float: left;
+}
+
+.code {
+    width: 480px;
+    padding: 8px;
+    font-size: 14px;
+    float: right;
+    background: #222;
+    color: #0c0;
+    font-weight: bold;
+}
+
+#time {
+    margin-bottom: 8px;
+    background: #ccc;
+    padding: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: right;
+}
+
+
+#cro {
+    margin: 32px 0;
+    width: 200px;
+    height: 100px;
+    background: #111;
+}
