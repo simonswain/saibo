@@ -1,6 +1,6 @@
 # Saibo
 
-A simple library for reactive programming
+A simple library for reactive programming in the browser or Node.js
 
 Saibo lets you make a network of cells (like a key-value store). 
 
