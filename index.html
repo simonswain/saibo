@@ -8,12 +8,11 @@
   </head>
   <body>
 
-    <div class="item">
+      <h1>Saibo</h1>
+      <div class="intro">
 
 <a href="https://github.com/simonswain/saibo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
-      <div class="demo">
-        <h1>Saibo</h1>
 <p>
 A simple library for reactive programming in the browser or Node.js
 </p>
@@ -44,7 +43,6 @@ and triggering event handler when cells they depend on change.
 Cells can have a timer function to set their value at a regular
 interval.
 </p>
-      </div>
     </div>
 
     <div class="item">
@@ -102,7 +100,7 @@ cells.on('time', function(x){
 });
 
 cells.on('time', function(x){
-  cro.set(Math.cos(x));
+  cro.set(Math.cos(x) * Math.sin(x/2));
 });
 
 cells.set('time', 0)
