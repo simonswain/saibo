@@ -43,7 +43,7 @@ and triggering event handler when cells they depend on change.
 
 <p>
 Cells can have a timer function to set their value at a regular
-interval
+interval.
 </p>
       </div>
     </div>
@@ -105,14 +105,6 @@ cells.on('time', function(x){
 cells.on('time', function(x){
   cro.set(Math.cos(x % 360));
 });
-
-document.getElementById('width').onchange = function(e){
-  cells.set('width', Number(e.target.value));
-};
-
-document.getElementById('height').onchange = function(e){
-  cells.set('height', Number(e.target.value));
-};
 
 cells.set('time', 0)
   .timer(250, function(){
