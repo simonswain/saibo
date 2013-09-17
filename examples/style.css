@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 16px;
+    font-family: arial;
+    font-size: 16px;
+    background: #ddd;
+}
+
+a {
+    color: #22c;
+}
+
+.item {
+    margin: 8px auto;
+    padding: 8px;
+    background: #eee;
+    overflow: auto;
+    position: relative;
+    max-width: 960px;
+    border-radius: 2px;
+    box-shadow: 0 0 16px #ddd;
+}
+
+h1 {
+    margin: 0 0 16px 0;
+}
+
+.demo h3 {
+    margin: 0 0 16px 0;
+}
+
+.demo {
+    float: left;
+}
+
+.code {
+    width: 512px;
+    padding: 8px;
+    font-size: 13px;
+    float: right;
+    background: #222;
+    color: #0c0;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+#time {
+    margin-bottom: 8px;
+    background: #ccc;
+    padding: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: right;
+}
